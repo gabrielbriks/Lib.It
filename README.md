@@ -1,2 +1,5 @@
 # Lib.It
-Construindo aplicação baseado no Kaban para controle de tarefas, com interface baseada ao Trello, pipefy e etc.
+### Construindo interface de aplicação para mapeamento de tarefas, interface baseada no Pipefy e etc.
+
+![](/.github/screen.png)
+
