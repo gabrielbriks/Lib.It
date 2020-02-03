@@ -44,4 +44,7 @@
 	Para isso iremos criar um arquivo chamdo de 'context.js', e 
 	dentro dele iremos definir a logica responsavel por essa maravilha.
 
-#Stop in 58 minutes
+#Utilizando o 'immer' para conseguir manusear os estados do React de forma imutavel
+	Estaremos adicionando uma lib chamada "immer" para conseguir utilizar os estados no react de uma forma mutavel, podendo executar algumas ações como 
+	o push, split e etc, sem que o React venha reclamar.
+		Comand > yarn add immer

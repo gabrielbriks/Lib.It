@@ -5,12 +5,12 @@ import BoardContext from '../Board/context';
 import { Container, Label } from './styles'
 
 
-export default function Card({ data, index }){
+export default function Card({ data, index, listIndex }){
   const ref = useRef();
   const { move } = useContext(BoardContext);
 
   const [{ isDragging }, dragRef] = useDrag({
-    item:{ type: 'CARD', index}, /*Defininto o tipo do meu elemento que pode ser arrastado*/
+    item:{ type: 'CARD', index, listIndex}, /*Defininto o tipo do meu elemento que pode ser arrastado, o seu index, e o index de sua lista*/
     collect: monitor => ({
       isDragging: monitor.isDragging(),/*is dragging == esta sendo arrastado */
     }),
@@ -22,10 +22,13 @@ export default function Card({ data, index }){
     accept: 'CARD',
     /*item == qual é o card que estamos arrastando*/
     hover(item, monitor){
+      const draggedListIndex = item.listIndex;
+      const targetListIndex = listIndex;
+      
       const draggedIndex = item.index;//Car que esta sendo arrastado
       const targetIndex = index;//Card Alvo
 
-      if(draggedIndex === targetIndex){
+      if(draggedIndex === targetIndex && draggedListIndex === targetListIndex){
         return;
       }
 
@@ -47,8 +50,13 @@ export default function Card({ data, index }){
         return;
       }
 
-      /*Essa é a função criada utilizando o context possui dois parametros "From" & "To"*/
-      move(draggedIndex, targetIndex);
+      /*Essa é a função criada utilizando o context possui dois parametros "From" & "To"(qual estou movendo, para onde estou movendo)*/
+      move(draggedListIndex, targetListIndex, draggedIndex, targetIndex);
+      
+      /*Resolvendo um pequeno bug ao movimentar o card, qual ficava tremendo por nao saber que ja havia concluido sua movimentacao
+      consiste em dizer para ele qual é agora o seu novo index*/
+      item.index = targetIndex;
+      item.listIndex = targetListIndex;
 
     },
   });
