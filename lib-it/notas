@@ -1,0 +1,47 @@
+
+# Instalar o create-react app 
+
+# Como nao estaremos utilizando o CSS, instalar a seguinte lib
+	comand > yarn add styled-components
+	criar um pasta styles;
+	criar um arquivo global.js dentro dessa pasta;
+	definir o component css;
+
+# Componentes da aplicação:
+	Header;
+	Board( contém todas as listas e cards ); 
+		Lista(irá conter todos os cards)
+			Card(irá conter a tarefa ou outra atividade qualquer)
+
+#Uitilizando icons( button +) no React:
+	Adicionamos uma lib chamada de react-icon, dentro dele possui um agama de icons e fonts-icons, alguns deles são Material-Icons, Ionic-Icons e por aí vai...
+		Comand > yarn add react-icons
+
+# Gerando Avatares Legais
+	É possivel gerarmos algumas imagens de avatares para conseguirmos
+	testar e também contruir os nossos projetos: Link >> http://avatars.adorable.io/
+
+# implementando possibilidade de arrastar os Cards
+	Para implementarmos essa funcionalidade, iremos utilizar um lib
+	do react chamada "dnd";
+
+	Comand > yarn add react-dnd-html5-backend react-dnd
+
+	* A implementação do dragging drop será por meio dessas Libs, sendo assim ao inciar a parte do dragging, será possivel visualizar 
+	de forma estilizada a ação de arrastar o Card.
+	* No Dropping será implementado a parte de inserir o cards nas listas que desejar, para isso a abordagem será em cima do seguinte raciocinio:
+		* Ao arrastarmos o Card, nao levaremos em conta inicialmente a lista de destino do card, mas sim o card que estará por baixo. Desta forma é possível buscar as informações da lista de destino e a posição exata na lista em que o usuario deseja inserir o card que esta sendo arrastado.
+
+	OBS: Bugs com esse tipo de cenário:
+
+		- Teremos problema ao tentar arrastar um card para uma lista que não possuí nenhum card, pois estamos levando em referência os cards da lista para inserir outros cards;
+
+		- Sendo assim não funcionara se arrastar o card para a lista em sí, mas funcionará se arrastarmo para cima de outros cards
+
+
+#Utilizando o Context dentro do React
+	* No React podemos usar um carinha chamado "Context" que irá nos ajudar a compartilhar informações entre vários componentes.
+	Para isso iremos criar um arquivo chamdo de 'context.js', e 
+	dentro dele iremos definir a logica responsavel por essa maravilha.
+
+#Stop in 58 minutes
