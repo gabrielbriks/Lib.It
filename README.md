@@ -1,5 +1,5 @@
 # Lib.It
-### Construindo interface de aplicação para mapeamento de tarefas, interface baseada no Pipefy e etc.
+### Construindo clone de interface do Pipfy 
 
 ![](/.github/screen.png)
 
