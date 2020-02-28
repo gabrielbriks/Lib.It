@@ -1,5 +1,5 @@
 # Lib.It
-### Construindo clone de interface do Pipfy 
+### Construindo clone básico de interface do Pipfy 
 
 ![](/.github/screen.png)
 
